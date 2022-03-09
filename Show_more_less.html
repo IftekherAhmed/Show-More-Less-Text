@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Show More/Less Button</title>
+</head>
+
+<body>
+	
+	<!-- Text Item -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas vitae scel<span class="text_dots">...</span>
+		
+		<span class="more_text">erisque enim ligula venenatis dolor. Maecenas
+            nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc
+            sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed
+            ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum.
+            Sed dapibus pulvinar nibh tempor porta.</span>
+			
+		<a href="javascript:void(0)" class="show_more_les_btn">read <span class="ml_btn_text">more</span></a>
+	</p>
+	<!--/ Text Item -->
+	
+	<hr><br>
+
+	<!-- Text Item -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas vitae scel<span class="text_dots">...</span>
+		
+		<span class="more_text">erisque enim ligula venenatis dolor. Maecenas
+            nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc
+            sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed
+            ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum.
+            Sed dapibus pulvinar nibh tempor porta.</span>
+			
+		<a href="javascript:void(0)" class="show_more_les_btn">read <span class="ml_btn_text">more</span></a>
+	</p>
+	<!--/ Text Item -->
+	
+	<hr><br>
+
+	<!-- Text Item -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas vitae scel<span class="text_dots">...</span>
+		
+		<span class="more_text">erisque enim ligula venenatis dolor. Maecenas
+            nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc
+            sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed
+            ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum.
+            Sed dapibus pulvinar nibh tempor porta.</span>
+			
+		<a href="javascript:void(0)" class="show_more_les_btn">read <span class="ml_btn_text">more</span></a>
+	</p>
+	<!--/ Text Item -->
+	
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {		
+			$('.more_text').hide();
+			
+			// On Click Show More Button
+            $(".show_more_les_btn").click(function () {                			
+				var get_dots		 = $(this).parent().find('.text_dots');
+				var get_more_text 	 = $(this).parent().find('.more_text');
+				
+				// Show More Less Button Text
+				var ml_text  = $(this).parent().find('.ml_btn_text');  
+				if (ml_text.text() == 'more') {
+					ml_text.text('less');
+				} else if (ml_text.text() == 'less') {
+					ml_text.text('more');
+				}
+				
+				$(get_dots).toggle();		
+				$(get_more_text).toggle(300);				
+            });
+        });
+    </script>
+
+</body>
+</html>
